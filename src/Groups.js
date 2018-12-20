@@ -22,6 +22,7 @@ module.exports =  class Groups{
       youngest: member.age,
       sum: member.age
     }
+    console.log(new_group);
     //save the group in the initially declared array using the js default push method
     this.groups.push(new_group);
     //update the initial variable declared in the constructor based on the number of groups count 

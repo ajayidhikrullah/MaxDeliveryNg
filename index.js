@@ -5,7 +5,7 @@ const app = express();
 const path = require('path');
 const list_of_students = require('./src/data');
 const Groups = require('./src/Groups');
-const DecodedMorse = require('./src/decoder');
+const decodedMorse = require('./src/decoder');
 
 //tells the app to locate the home page of the application
 const pathToLandingPage = path.join(__dirname, './public');
@@ -22,11 +22,11 @@ app.get('/question1', (req,res) => {
 });
 
 app.get('/question2', (req, res) => {
-  let morse_result = new DecodedMorse("-- .- -..-   -. --- .--");
+  let morse_result = decodedMorse("-- .- -..-   -. --- .--");
+  // console.log(morse_result);
   return res.send({
     response : morse_result
   }).status(200);
-
 });
 
 const PORT = 5000;
